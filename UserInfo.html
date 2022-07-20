@@ -1,0 +1,89 @@
+<html>
+<head>
+<script src="./validation.js"></script>
+<style>
+	.error-statement {
+		display: none;
+		color: red;
+		font-size: 12px;
+	}
+</style>
+	</head>
+<body>
+<h1>User Info Portal</h1>
+
+<form onsubmit="return submitForm()" method="POST" action="./Processing.php" ">	
+
+  <label for="firstname">FirstName:</label>
+  <input type="text" id="firstname" name="firstname" class="form-input" onkeyup="removeValidationError('firstNameError')"><br/>
+	<span id="firstNameError" class="error-statement">First Name is Required</span>
+  <br/>
+  
+  <label for="lastname">LastName:</label>
+  <input type="text" id="lastname" name="lastname" class="form-input" onkeyup="removeValidationError('lastNameError')"><br/>
+  <span id="lastNameError" class="error-statement">Last Name is Required</span>
+  <br/>
+  
+  <label for='address'>Address:</label>
+  <textarea id="address" name="address" class="form-input" onkeyup="removeValidationError('addressError')"></textarea><br/>
+  <span id="addressError" class="error-statement">Address is Required</span>
+  <br/>
+  
+  <label for='gender'>Gender:</label><br/>
+  
+  <input type="radio" id="male" name="gender" value="male" class="form-input" onclick="removeValidationError('genderError')"/>
+  <label for="male">Male</label><br/>
+  
+  <input type="radio" id="female" name="gender" value="female" class="form-input" onclick="removeValidationError('genderError')" />
+  <label for="female">Female</label><br/>
+  
+  <input type="radio" id="transgender" name="gender" value="transgender" class="form-input" onclick="removeValidationError('genderError')"	 />
+  <label for="transgender">Transgender</label><br/>
+  <span id="genderError" class="error-statement">Select Gender</span><br/>
+  
+  <label for="city">City:</label>
+  <select multiple="true" id="city" name="city[]" class="form-input" onchange="removeValidationError('cityError')">
+
+    <option value="" selected></option>
+    <option value="Jalandhar">Jalandhar</option>
+    <option value="Ludhiana" >Ludhiana</option>
+    <option value="Chandigarh">Chandigarh</option>
+	<option value="Malerkotla">Malerkotla</option>
+	
+   </select><br/>
+   <span id="cityError" class="error-statement">City is Required</span>
+   <br/>
+	
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" class="form-input" onkeyup="removeValidationError('emailError')"><br/>
+  <span id="emailError" class="error-statement">Email is Required</span>
+  <br/>
+  
+  <label for="dob">DOB:</label>
+  <input type="date" id="dob" name="dob" class="form-input" onkeyup="removeValidationError('dobError')"><br/>
+  <span id="dobError" class="error-statement">Dob is Required</span>
+  <br/>
+  
+  <label for="lang">Language Known:</label><br>
+  <input type="checkbox" id="lang1" name="lang" value="Hindi" class="form-input" onclick="removeValidationError('langError')"/>
+  <label for="vehicle1"> Hinid</label><br>
+  <input type="checkbox" id="lang2" name="lang" value="English" class="form-input" onclick="removeValidationError('langError')"/>
+  <label for="vehicle2"> English</label><br>
+  <input type="checkbox" id="lang3" name="lang" value="Punjabi" class="form-input" onclick="removeValidationError('langError')"/>
+  <label for="vehicle3"> Punjabi</label><br>
+  <span id="langError" class="error-statement">Select a Language</span>
+  <br>
+  
+  <label for="contact">Contact:</label>
+  <input type="number" id="contact" name="contact" class="form-input" onkeyup="removeValidationError('contactError')"/><br/>
+  <span id="contactError" class="error-statement">Contact is Required</span>
+  <br/>
+  
+  <label for="photo">Upload Image:</label>
+  <input type="file" id="photo" name="photo" class="form-input" onkeyup="removeValidationError('photoError')" /><br/>
+  <span id="photoError" class="error-statement">Photo is Required</span>
+  <br/>
+  
+  <input type="submit" id="submitButton" value="Submit"/>
+  
+</form>

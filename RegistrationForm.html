@@ -1,0 +1,44 @@
+<html>
+<body>
+
+<h2>Student Registration Form</h2>
+
+
+<form action="./studentportal.php" method="POST">	
+	
+  <label for='username'>Username:</label>
+  <input type="text" id="username" name="username" ><br/><br/>
+  
+  <label for='password'>Password:</label>
+  <input type="password" id="password" name="password" /><br/><br/>
+  
+  <label for='gender'>Gender:</label><br/>
+  <input type="radio" id="male" name="gender" value="male" />
+  <label for="male">Male</label><br/>
+  
+  <input type="radio" id="female" name="gender" value="female" />
+  <label for="female">Female</label><br/>
+  
+  <input type="radio" id="transgender" name="gender" value="transgender" />
+  <label for="transgender">Transgender</label><br/><br/>
+  
+  <label for='language'>Language Known:</label><br/>
+  
+  <input type="checkbox" id="English" name="language[]" value="English" />
+  <label for="English">English</label><br/>
+  
+  <input type="checkbox" id="Punjabi" name="language[]" value="Punjabi" />
+  <label for="Punjabi">Punjabi</label><br/>
+  
+  <input type="checkbox" id="Hindi" name="language[]" value="Hindi" />
+  <label for="Hindi">Hindi</label><br/><br/>
+  
+  <label for="photo">Upload Photo:</label>
+  <input type="file" id="photo" name="photo"><br/><br/>
+  
+  <input type="submit" value="Submit" />
+</form>
+
+
+</body>
+</html>
