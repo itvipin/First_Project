@@ -1,9 +1,9 @@
 <?php
 class DataCorrection
 {
-
     public $data = [];
 
+    /** Correct Name for all values */
     private function correctName($allvalues)
     {
 		$this->data = $allvalues;
