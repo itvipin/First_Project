@@ -11,21 +11,19 @@ class DataCorrection
         {
             $lowercase = $this->data['firstname'] = strtolower($allvalues['firstname']);
             $this->data['firstname'] = ucfirst($lowercase);
-        };
+        }
         if (!empty($allvalues['lastname']))
         {
             $lowercase = $this->data['lastname'] = strtolower($allvalues['lastname']);
             $this->data['lastname'] = ucfirst($lowercase);
-        };
+        }
         return $this->data;
     }
 
     function correct($validatedValues)
     {
-        //echo '<pre>';
-        //print_r($validatedValues);
         $this->correctName($validatedValues);
-        return $this->data;
+        return $this->data;;
     }
 
 }

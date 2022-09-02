@@ -1,5 +1,4 @@
 var checkedMap = [];
-var langMap = [];
 function submitForm() {
 	  var firstNameInput = document.getElementById("firstname");
 	  var lastNameInput = document.getElementById("lastname");
@@ -8,12 +7,20 @@ function submitForm() {
 	  var genderInput = document.getElementsByName("gender");
 	  var cityInput = document.getElementById("city");
 	  var dobInput = document.getElementById("dob");
-	  var langInput = document.getElementsByName("lang");
 	  var contactInput = document.getElementById("contact");
 	  var photoInput = document.getElementById("photo");
-	  //var formInputs = document.getElementsByClassName('form-input');
+	  var formInputs = document.getElementsByClassName('form-control');
+	  var spanErrors = document.getElementsByName('Error');
 	  
-	
+	  //console.log(formInputs);
+	  
+	  for(var i = 0; i < formInputs.length; i++){
+		  if (formInputs[i].value === '')
+		  {
+			  spanErrors[0].style.display = 'block';
+			  return false;
+		  }
+		}
 	  
 	  if (firstNameInput.value === '') {
 		var firstNameError = document.getElementById('firstNameError');
@@ -31,8 +38,6 @@ function submitForm() {
 		addressError.style.display = 'block';
 		return false;
 	  }
-	    
-		
 		
 	  for(var i = 0; i < genderInput.length; i++) {
 		 
@@ -66,24 +71,7 @@ function submitForm() {
 		dobError.style.display = 'block';
 		return false;
 	  }
-	  
-	 for(var i=o ; i < langInput.length ; i++){
-		  
-		  if(langInput[i].checked)
-		  {
-			langMap.push(1);
-		  } else {
-			langMap.push(0);
-		  }
-	    }
-	  	  
-	  if (!langMap.includes(1)) {
-		var langError = document.getElementById('langError');
-		langError.style.display = 'block';
-		return false;
-	   }
-	   
-	  
+	     
 	  if (contactInput.value === '') {
 		var contactError = document.getElementById('contactError');
 		contactError.style.display = 'block';
@@ -96,14 +84,12 @@ function submitForm() {
 		return false;
 	  }
 	  
-	  
 	  return true;
 	}
 	
 	function removeValidationError(inputId) {
 		var errorStatement = document.getElementById(inputId);
-		//for(var i = 0; i <= errorStatements.length; i++) {
-			//errorStatements[i].style.display = 'none';
-		//}
 		errorStatement.style.display = 'none';
 	}
+	
+	

@@ -4,7 +4,8 @@
 	include_once('./FormSubmission.php');
 
 	if ($_SERVER["REQUEST_METHOD"] === "POST") 	{
-		$v = new Validation();
+		
+		$v = new Validation();    //object of class validation.
 		$validateErrors = $v->check($_POST);
 		If(!empty($validateErrors)){
 			echo '<pre>';
@@ -17,4 +18,4 @@
 			$f->submit($correctedData);
 		}
 	}
-	
+?>
