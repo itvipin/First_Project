@@ -4,16 +4,14 @@ class DataCorrection
     public $data = [];
 
     /** Correct Name for all values */
-    private function correctName($allvalues)
+    private function fixData($allvalues)
     {
-		$this->data = $allvalues;
-        if (!empty($allvalues['firstname']))
-        {
+        $this->data = $allvalues;
+        if (!empty($allvalues['firstname'])) {
             $lowercase = $this->data['firstname'] = strtolower($allvalues['firstname']);
             $this->data['firstname'] = ucfirst($lowercase);
         }
-        if (!empty($allvalues['lastname']))
-        {
+        if (!empty($allvalues['lastname'])) {
             $lowercase = $this->data['lastname'] = strtolower($allvalues['lastname']);
             $this->data['lastname'] = ucfirst($lowercase);
         }
@@ -22,9 +20,7 @@ class DataCorrection
 
     function correct($validatedValues)
     {
-        $this->correctName($validatedValues);
+        $this->fixData($validatedValues);
         return $this->data;;
     }
-
 }
-
