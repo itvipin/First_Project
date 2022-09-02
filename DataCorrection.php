@@ -4,7 +4,7 @@ class DataCorrection
     public $data = [];
 
     /** Correct Name for all values */
-    private function correctName($allvalues)
+    private function correctData($allvalues)
     {
 		$this->data = $allvalues;
         if (!empty($allvalues['firstname']))
@@ -22,7 +22,7 @@ class DataCorrection
 
     function correct($validatedValues)
     {
-        $this->correctName($validatedValues);
+        $this->correctData($validatedValues);
         return $this->data;;
     }
 
